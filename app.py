@@ -168,6 +168,15 @@ elif 5.5 < ph <= 6.5:
             "notas_base": "Ámbar gris, Cedro, Vetiver",
             "precio": "$155 USD"
         },
+         {
+            "nombre": "Dior Sauvage",
+            "ocasión": "Día a día",
+            "lugar": "Muñecas y cuello",
+            "notas_top": "Bergamota de Calabria, Pimienta",
+            "notas_corazon": "Lavanda, Pimienta Sichuan",
+            "notas_base": "Ámbar gris, Cedro, Vetiver",
+            "precio": "$155 USD"
+        },
         {
             "nombre": "Jean Paul Gaultier Le Male",
             "ocasión": "Cenas y citas",
@@ -268,10 +277,9 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # Mostrar perfumes en columnas con tarjetas mejoradas
 st.markdown("### 💎 Perfumes sugeridos para ti:")
-cols = st.columns(3)
-st.write("DEBUG perfumes:", 3en(perfumes))
-for i, p in enumerate(perfumes):
-    with cols[i]:
+cols = st.columns(len(perfumes))
+for col, p in zip(cols, perfumes):
+    with col:
         st.markdown(f"""
         <div style='background-color:rgba(255,255,255,0.9); padding:20px; border-radius:15px; margin-bottom:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
         """, unsafe_allow_html=True)
