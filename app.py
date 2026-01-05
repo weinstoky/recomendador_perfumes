@@ -269,6 +269,7 @@ st.markdown("</div>", unsafe_allow_html=True)
 # Mostrar perfumes en columnas con tarjetas mejoradas
 st.markdown("### 💎 Perfumes sugeridos para ti:")
 cols = st.columns(3)
+st.write("DEBUG perfumes:", len(perfumes))
 for i, p in enumerate(perfumes):
     with cols[i]:
         st.markdown(f"""
