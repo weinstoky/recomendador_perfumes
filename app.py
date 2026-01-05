@@ -45,6 +45,36 @@ with st.sidebar:
 
 # Barra de pH
 ph = st.slider("Selecciona tu pH de piel", 0.0, 14.0, 5.5, 0.1)
+    # 🔒 PERFUMES FIJOS (GARANTIZADO 3 SIEMPRE)
+perfumes = [
+    {
+        "nombre": "Bleu de Chanel",
+        "ocasión": "Uso diario",
+        "lugar": "Cuello y muñecas",
+        "notas_top": "Limón, menta",
+        "notas_corazon": "Jengibre, jazmín",
+        "notas_base": "Incienso, cedro",
+        "precio": "$150 USD"
+    },
+    {
+        "nombre": "Dior Sauvage",
+        "ocasión": "Todo momento",
+        "lugar": "Cuello",
+        "notas_top": "Bergamota",
+        "notas_corazon": "Lavanda",
+        "notas_base": "Ámbar",
+        "precio": "$155 USD"
+    },
+    {
+        "nombre": "YSL Y",
+        "ocasión": "Día y noche",
+        "lugar": "Muñecas",
+        "notas_top": "Manzana, jengibre",
+        "notas_corazon": "Salvia",
+        "notas_base": "Madera, tonka",
+        "precio": "$120 USD"
+    }
+]
 
 # Guardar pH en historial
 if ph not in st.session_state.historial_ph:
