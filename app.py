@@ -277,10 +277,11 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # Mostrar perfumes en columnas con tarjetas mejoradas
 st.markdown("### 💎 Perfumes sugeridos para ti:")
-cols = st.columns(len(perfumes))
+cols = st.columns(3)
+
 for col, p in zip(cols, perfumes):
     with col:
-        st.markdown(f"""
+        st.markdown(f"### {p['nombre']}")
         <div style='background-color:rgba(255,255,255,0.9); padding:20px; border-radius:15px; margin-bottom:10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
         """, unsafe_allow_html=True)
         
@@ -378,3 +379,7 @@ with tips_col2:
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align:center;'>✨ Tu fragancia ideal refleja tu estilo único ✨</h3>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; color:#666;'>Recuerda: cada piel es diferente, ¡prueba antes de comprar!</p>", unsafe_allow_html=True)
+# 🔒 Seguro: si por cualquier error hay menos de 3 perfumes
+if len(perfumes) < 3:
+    perfumes = perfumes * 3
+    perfumes = perfumes[:3]
